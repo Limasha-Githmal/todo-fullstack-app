@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# TODO App — Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React.js frontend for the TODO application.
 
-## Available Scripts
+## Tech Stack
+- React.js
+- Axios (HTTP requests)
+- CSS (custom animations and transitions)
 
-In the project directory, you can run:
+## Prerequisites
+- Node.js v16 or higher
+- npm
 
-### `npm start`
+## Setup & Run Locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Install dependencies
+cd client
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Configure API URL
+The app connects to the backend at:
+http://localhost:5000/api/todos
 
-### `npm test`
+If your backend runs on a different port, update this line in:
+src/api/todos.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const BASE_URL = 'http://localhost:5000/api/todos';
 
-### `npm run build`
+### 3. Start the app
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app will open at http://localhost:3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
+- View all todos
+- Add a new todo (title + optional description)
+- Edit a todo
+- Mark todo as done/undone
+- Delete a todo with slide-out animation
+- Optimistic UI updates
+- Form validation
+- Loading and error states
+- Smooth animations and transitions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Assumptions & Limitations
+- Backend must be running before starting the frontend
+- No user authentication (single user app)
+- Data is not paginated (all todos load at once)

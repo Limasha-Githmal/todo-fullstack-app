@@ -1,0 +1,27 @@
+{
+  "name": "todo-fullstack-app",
+  "version": "1.0.0",
+  "description": "A full-stack TODO application built with React, Node.js, Express, and MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Limasha-Githmal/todo-fullstack-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Limasha-Githmal/todo-fullstack-app/issues"
+  },
+  "homepage": "https://github.com/Limasha-Githmal/todo-fullstack-app#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

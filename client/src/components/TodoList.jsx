@@ -3,22 +3,26 @@ import TodoItem from './TodoItem';
 export default function TodoList({ todos, onToggle, onEdit, onDelete }) {
   if (todos.length === 0) {
     return (
-      <p style={{ color: '#999', textAlign: 'center' }}>
-        No todos yet. Add one above!
-      </p>
+      <div className="empty-state">
+        <p>No todos yet. Add one above!</p>
+      </div>
     );
   }
 
   return (
     <div>
-      {todos.map((todo) => (
-        <TodoItem
+      {todos.map((todo, index) => (
+        <div
           key={todo._id}
-          todo={todo}
-          onToggle={onToggle}
-          onEdit={onEdit}
-          onDelete={onDelete}
-        />
+          style={{ animationDelay: `${index * 0.05}s` }}
+        >
+          <TodoItem
+            todo={todo}
+            onToggle={onToggle}
+            onEdit={onEdit}
+            onDelete={onDelete}
+          />
+        </div>
       ))}
     </div>
   );
