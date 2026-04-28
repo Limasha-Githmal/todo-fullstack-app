@@ -1,6 +1,18 @@
 import { useState } from 'react';
 import './TodoItem.css';
 
+// Helper function to format date nicely
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+};
+
 export default function TodoItem({ todo, onToggle, onEdit, onDelete }) {
   const [removing, setRemoving] = useState(false);
 
@@ -17,6 +29,15 @@ export default function TodoItem({ todo, onToggle, onEdit, onDelete }) {
       {todo.description && (
         <p className="todo-description">{todo.description}</p>
       )}
+
+      {/* Timestamps */}
+      <div className="todo-timestamps">
+        <span>Created: {formatDate(todo.createdAt)}</span>
+        {todo.createdAt !== todo.updatedAt && (
+          <span>Updated: {formatDate(todo.updatedAt)}</span>
+        )}
+      </div>
+
       <div className="todo-actions">
         <button
           className={todo.done ? 'btn-undo' : 'btn-done'}
