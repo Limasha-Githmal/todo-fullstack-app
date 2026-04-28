@@ -6,19 +6,10 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://todo-fullstack-app.vercel.app', 
+  'https://todo-fullstack-app.vercel.app', // replace with your actual Vercel URL
 ];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-}));
-
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/todos', todoRoutes);
