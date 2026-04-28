@@ -6,7 +6,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://todo-fullstack-app.vercel.app', 
+  'https://todo-fullstack-app-five-kappa.vercel.app',
 ];
 
 app.use(cors({
