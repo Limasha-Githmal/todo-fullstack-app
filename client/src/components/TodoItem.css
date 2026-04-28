@@ -137,6 +137,19 @@
   animation: slideOutLeft 0.3s ease forwards;
 }
 
+.todo-timestamps {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.todo-item.done .todo-timestamps {
+  color: #ccc;
+}
+
 @keyframes slideOutLeft {
   from {
     opacity: 1;
