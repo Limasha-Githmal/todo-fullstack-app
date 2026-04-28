@@ -150,6 +150,24 @@
   color: #ccc;
 }
 
+.todo-field {
+  margin-bottom: 0.6rem;
+}
+
+.todo-field-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #3498db;
+  margin-bottom: 2px;
+}
+
+.todo-item.done .todo-field-label {
+  color: #aaa;
+}
+
 @keyframes slideOutLeft {
   from {
     opacity: 1;

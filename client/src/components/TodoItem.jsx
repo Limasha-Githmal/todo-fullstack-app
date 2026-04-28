@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './TodoItem.css';
 
-// Helper function to format date nicely
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   return date.toLocaleString('en-US', {
@@ -25,9 +24,19 @@ export default function TodoItem({ todo, onToggle, onEdit, onDelete }) {
 
   return (
     <div className={`todo-item ${todo.done ? 'done' : ''} ${removing ? 'removing' : ''}`}>
-      <h3 className="todo-title">{todo.title}</h3>
+
+      {/* Title */}
+      <div className="todo-field">
+        <span className="todo-field-label">Title</span>
+        <h3 className="todo-title">{todo.title}</h3>
+      </div>
+
+      {/* Description */}
       {todo.description && (
-        <p className="todo-description">{todo.description}</p>
+        <div className="todo-field">
+          <span className="todo-field-label">Description</span>
+          <p className="todo-description">{todo.description}</p>
+        </div>
       )}
 
       {/* Timestamps */}
@@ -38,6 +47,7 @@ export default function TodoItem({ todo, onToggle, onEdit, onDelete }) {
         )}
       </div>
 
+      {/* Action Buttons */}
       <div className="todo-actions">
         <button
           className={todo.done ? 'btn-undo' : 'btn-done'}
